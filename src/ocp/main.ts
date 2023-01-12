@@ -1,16 +1,16 @@
 import { Messaging } from './services/messaging';
 import { Order } from './classes/order';
 import { Persistency } from './persistency';
-import { Product } from './classes/product';
 import { ShoppingCart } from './classes/shopping-cart';
-import { NoDiscount } from './classes/discount';
+import { Product } from './classes/product';
+import { FiftyPercentDiscount } from './classes/discount';
 
 // = == =========INJEÇÃO DEPENDÊNCIA===================== == =
 
-// const fiftyPercentDiscount = new FiftyPercentDiscount();
+const fiftyPercentDiscount = new FiftyPercentDiscount();
 // const tenPercentDiscount = new TenPercentDiscount();
-const noDiscount = new NoDiscount();
-const shoppingCart = new ShoppingCart(noDiscount);
+// const noDiscount = new NoDiscount();
+const shoppingCart = new ShoppingCart(fiftyPercentDiscount);
 const messaging = new Messaging();
 const persistency = new Persistency();
 const order = new Order(shoppingCart, messaging, persistency);
