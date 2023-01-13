@@ -4,6 +4,7 @@ import { Persistency } from './persistency';
 import { ShoppingCart } from './classes/shopping-cart';
 import { Product } from './classes/product';
 import { NoDiscount } from './classes/discount';
+import { EnterpriseCustomer, IndividualCustomer } from './classes/customer';
 
 // = == =========INJEÇÃO DEPENDÊNCIA===================== == =
 
@@ -13,7 +14,9 @@ const noDiscount = new NoDiscount();
 const shoppingCart = new ShoppingCart(noDiscount);
 const messaging = new Messaging();
 const persistency = new Persistency();
-const order = new Order(shoppingCart, messaging, persistency);
+//const individualCustomer = new IndividualCustomer('Ivano ', 'Gonçalves', '111.111.111-1');
+const enterpriseCustomer = new EnterpriseCustomer('EMPRESA ', '111.111.111-1');
+const order = new Order(shoppingCart, messaging, persistency, enterpriseCustomer);
 
 // = == =================================================== == =
 
