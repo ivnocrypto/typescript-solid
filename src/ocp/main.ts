@@ -1,6 +1,6 @@
 import { Messaging } from './services/messaging';
 import { Order } from './classes/order';
-import { Persistency } from './persistency';
+import { Persistency } from './services/persistency';
 import { ShoppingCart } from './classes/shopping-cart';
 import { Product } from './classes/product';
 import { FiftyPercentDiscount } from './classes/discount';
